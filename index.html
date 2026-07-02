@@ -11,7 +11,8 @@
   h2 { margin-top: 2.5rem; border-bottom: 1px solid #eee; padding-bottom: .2rem; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; }
   .grid figure { margin: 0; }
-  .grid img, .grid video { width: 100%; border: 1px solid #ddd; border-radius: 6px; }
+  .grid img, .grid video { width: 100%; border: 1px solid #ddd; border-radius: 6px; display: block; }
+  .grid figure video { margin-top: .5rem; }
   figcaption { font-size: .85rem; color: #555; text-align: center; margin-top: .25rem;
                font-family: ui-monospace, monospace; }
   a { color: #0969da; }
@@ -28,6 +29,7 @@ constrained by real hole walls.</p>
 <p>Code: <a href="https://github.com/joonhyung-lee/fmb-mujoco">github.com/joonhyung-lee/fmb-mujoco</a></p>
 
 <h2>Scenes (aligned keyframes)</h2>
+<p>Each scene render with its collision-geometry view below (board/base hulls only, unified color).</p>
 <div class="grid" id="scenes"></div>
 
 <h2>Aligned — 360° sweeps</h2>
@@ -39,9 +41,8 @@ constrained by real hole walls.</p>
 walls really constrain the objects.</p>
 <div class="grid" id="disturb"></div>
 
-<h2>Collision meshes</h2>
-<div class="wide"><img src="media/coacd_matrix.png" alt="CoACD decomposition matrix"></div>
-<div class="grid" id="collision"></div>
+<h2>CoACD decomposition matrix</h2>
+<div class="wide"><img loading="lazy" src="media/coacd_matrix.png" alt="CoACD decomposition matrix"></div>
 
 <script>
 const SCENES = ["scene_single_S_short","scene_single_S_long",
@@ -49,22 +50,28 @@ const SCENES = ["scene_single_S_short","scene_single_S_long",
                 "scene_single_L_short","scene_single_L_long",
                 "scene_multi_1","scene_multi_2","scene_multi_3"];
 const DISTURB = ["disturb_xy_0.5N","disturb_0.4w"];
-const COLLISION = ["scene_single_S_short_collision","scene_single_M_short_collision",
-                   "scene_single_L_short_collision",
-                   "scene_multi_1_collision","scene_multi_2_collision","scene_multi_3_collision",
-                   "all_collision_meshes","peg_collision_meshes",
-                   "board_collision_meshes","assembly_collision_meshes"];
+// collision-view video per scene (long pegs share the short scene's board)
+const COLLMAP = {scene_single_S_short: "scene_single_S_short_collision",
+                 scene_single_M_short: "scene_single_M_short_collision",
+                 scene_single_L_short: "scene_single_L_short_collision",
+                 scene_multi_1: "scene_multi_1_collision",
+                 scene_multi_2: "scene_multi_2_collision",
+                 scene_multi_3: "scene_multi_3_collision"};
 const fig = (inner, cap) => `<figure>${inner}<figcaption>${cap}</figcaption></figure>`;
 const vid = f => `<video controls muted loop playsinline preload="metadata"
   poster="media/posters/${f}.jpg" src="media/videos/${f}.mp4"></video>`;
-document.getElementById("scenes").innerHTML =
-  SCENES.map(s => fig(`<img loading="lazy" src="media/scenes/${s}.png">`, s)).join("");
+document.getElementById("scenes").innerHTML = SCENES.map(s =>
+  fig(`<img loading="lazy" src="media/scenes/${s}.png">` + (COLLMAP[s] ? vid(COLLMAP[s]) : ""), s)).join("");
 document.getElementById("aligned").innerHTML =
   SCENES.map(s => fig(vid(s + "_aligned"), s)).join("");
 document.getElementById("disturb").innerHTML =
   SCENES.flatMap(s => DISTURB.map(d => fig(vid(`${s}_${d}`), `${s} — ${d.replace(/_/g," ")}`))).join("");
-document.getElementById("collision").innerHTML =
-  COLLISION.map(c => fig(vid(c), c)).join("");
+
+// autoplay only the videos near the viewport; pause the rest
+const io = new IntersectionObserver(entries => {
+  for (const e of entries) e.isIntersecting ? e.target.play() : e.target.pause();
+}, {rootMargin: "100px", threshold: 0.4});
+document.querySelectorAll("video").forEach(v => io.observe(v));
 </script>
 </body>
 </html>
