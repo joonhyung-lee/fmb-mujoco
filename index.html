@@ -55,7 +55,8 @@ const COLLISION = ["scene_single_S_short_collision","scene_single_M_short_collis
                    "all_collision_meshes","peg_collision_meshes",
                    "board_collision_meshes","assembly_collision_meshes"];
 const fig = (inner, cap) => `<figure>${inner}<figcaption>${cap}</figcaption></figure>`;
-const vid = f => `<video controls muted loop preload="none" src="media/videos/${f}.mp4"></video>`;
+const vid = f => `<video controls muted loop playsinline preload="metadata"
+  poster="media/posters/${f}.jpg" src="media/videos/${f}.mp4"></video>`;
 document.getElementById("scenes").innerHTML =
   SCENES.map(s => fig(`<img loading="lazy" src="media/scenes/${s}.png">`, s)).join("");
 document.getElementById("aligned").innerHTML =
