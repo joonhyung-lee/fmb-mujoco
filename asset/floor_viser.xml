@@ -1,0 +1,28 @@
+<mujoco model="floor viser style">
+  <!-- mjlab/viser-style floor in pure XML: flat light-gray ground with thin
+       grid lines (mark="edge" on a flat texture = one line per texrepeat cell)
+       and a plain near-white background. No Python needed. -->
+
+  <visual>
+    <global offwidth="1280" offheight="960"/>
+    <headlight diffuse="0.7 0.7 0.7" ambient="0.4 0.4 0.4" specular="0 0 0"/>
+    <rgba haze="0.92 0.93 0.95 1"/>
+  </visual>
+
+  <asset>
+    <!-- Sky: uniform near-white (viser background) -->
+    <texture type="skybox" builtin="flat" rgb1="0.92 0.93 0.95" rgb2="0.92 0.93 0.95"
+             width="64" height="384"/>
+    <!-- Ground: flat gray, 1px edge per repeat -> 0.5m grid lines -->
+    <texture type="2d" name="grid_viser" builtin="flat" mark="edge"
+             rgb1="0.87 0.88 0.90" rgb2="0.87 0.88 0.90" markrgb="0.72 0.74 0.78"
+             width="300" height="300"/>
+    <material name="grid_viser" texture="grid_viser" texuniform="true"
+              texrepeat="2 2" reflectance="0.05"/>
+  </asset>
+
+  <worldbody>
+    <light pos="1 -1 1.5" dir="-1 1 -1" diffuse="0.5 0.5 0.5" directional="true"/>
+    <geom name="floor" group="1" size="0 0 0.05" type="plane" material="grid_viser"/>
+  </worldbody>
+</mujoco>
