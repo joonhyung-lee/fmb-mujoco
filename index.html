@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>fmb-mujoco — FMB in MuJoCo</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         max-width: 1100px; margin: 0 auto; padding: 1rem 2rem 4rem; color: #222; }
+  h1 { border-bottom: 2px solid #eee; padding-bottom: .3rem; }
+  h2 { margin-top: 2.5rem; border-bottom: 1px solid #eee; padding-bottom: .2rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; }
+  .grid figure { margin: 0; }
+  .grid img, .grid video { width: 100%; border: 1px solid #ddd; border-radius: 6px; }
+  figcaption { font-size: .85rem; color: #555; text-align: center; margin-top: .25rem;
+               font-family: ui-monospace, monospace; }
+  a { color: #0969da; }
+  .wide img { width: 100%; }
+</style>
+</head>
+<body>
+<h1>fmb-mujoco</h1>
+<p><a href="https://functional-manipulation-benchmark.github.io/">FMB (Functional Manipulation
+Benchmark)</a> objects in MuJoCo: 54 pegs (9 shapes × 3 sizes × 2 lengths) matched to 3 hole
+boards, plus 3 interlocking assembly sets. Scenes ship with baked <em>aligned</em> keyframes and
+hybrid collision (CoACD hulls, hole-plugging hulls removed) so pegs really insert and are laterally
+constrained by real hole walls.</p>
+<p>Code: <a href="https://github.com/joonhyung-lee/fmb-mujoco">github.com/joonhyung-lee/fmb-mujoco</a></p>
+
+<h2>Scenes (aligned keyframes)</h2>
+<div class="grid" id="scenes"></div>
+
+<h2>Aligned — 360° sweeps</h2>
+<div class="grid" id="aligned"></div>
+
+<h2>External disturbance</h2>
+<p>Random-direction forces applied to every free body (direction resampled at 30&nbsp;Hz) while the
+pegs stay seated in their holes — demonstrating the hole walls constrain the objects.</p>
+<div class="grid" id="disturb"></div>
+
+<h2>Collision meshes</h2>
+<div class="wide"><img src="media/coacd_matrix.png" alt="CoACD decomposition matrix"></div>
+<div class="grid" id="collision"></div>
+
+<script>
+const SCENES = ["scene_single_S_short","scene_single_S_long",
+                "scene_single_M_short","scene_single_M_long",
+                "scene_single_L_short","scene_single_L_long",
+                "scene_multi_1","scene_multi_2","scene_multi_3"];
+const DISTURB = ["disturb_0.05N","disturb_0.1N","disturb_xy_0.5N","disturb_xy_1.0N","disturb_0.4w"];
+const COLLISION = ["all_collision_meshes","peg_collision_meshes",
+                   "board_collision_meshes","assembly_collision_meshes"];
+const fig = (inner, cap) => `<figure>${inner}<figcaption>${cap}</figcaption></figure>`;
+const vid = f => `<video controls muted loop preload="none" src="media/videos/${f}.mp4"></video>`;
+document.getElementById("scenes").innerHTML =
+  SCENES.map(s => fig(`<img loading="lazy" src="media/scenes/${s}.png">`, s)).join("");
+document.getElementById("aligned").innerHTML =
+  SCENES.map(s => fig(vid(s + "_aligned"), s)).join("");
+document.getElementById("disturb").innerHTML =
+  SCENES.flatMap(s => DISTURB.map(d => fig(vid(`${s}_${d}`), `${s} — ${d.replace(/_/g," ")}`))).join("");
+document.getElementById("collision").innerHTML =
+  COLLISION.map(c => fig(vid(c), c)).join("");
+</script>
+</body>
+</html>
