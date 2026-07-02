@@ -34,8 +34,9 @@ constrained by real hole walls.</p>
 <div class="grid" id="aligned"></div>
 
 <h2>External disturbance</h2>
-<p>Random-direction forces applied to every free body (direction resampled at 30&nbsp;Hz) while the
-pegs stay seated in their holes — demonstrating the hole walls constrain the objects.</p>
+<p>Random-direction forces applied to every free body (direction resampled at 30&nbsp;Hz):
+0.5&nbsp;N horizontal, and 0.4&times;body-weight. The pegs rattle but stay seated — the hole
+walls really constrain the objects.</p>
 <div class="grid" id="disturb"></div>
 
 <h2>Collision meshes</h2>
@@ -47,7 +48,7 @@ const SCENES = ["scene_single_S_short","scene_single_S_long",
                 "scene_single_M_short","scene_single_M_long",
                 "scene_single_L_short","scene_single_L_long",
                 "scene_multi_1","scene_multi_2","scene_multi_3"];
-const DISTURB = ["disturb_0.05N","disturb_0.1N","disturb_xy_0.5N","disturb_xy_1.0N","disturb_0.4w"];
+const DISTURB = ["disturb_xy_0.5N","disturb_0.4w"];
 const COLLISION = ["all_collision_meshes","peg_collision_meshes",
                    "board_collision_meshes","assembly_collision_meshes"];
 const fig = (inner, cap) => `<figure>${inner}<figcaption>${cap}</figcaption></figure>`;
