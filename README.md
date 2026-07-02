@@ -1,4 +1,6 @@
-# mjfmb
+# fmb-mujoco
+
+**Project Page:** [joonhyung-lee.github.io/fmb-mujoco](https://joonhyung-lee.github.io/fmb-mujoco/)
 
 [FMB (Functional Manipulation Benchmark)](https://functional-manipulation-benchmark.github.io/) objects in MuJoCo.
 
