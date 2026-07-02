@@ -29,8 +29,10 @@ constrained by real hole walls.</p>
 <p>Code: <a href="https://github.com/joonhyung-lee/fmb-mujoco">github.com/joonhyung-lee/fmb-mujoco</a></p>
 
 <h2>Scenes (aligned keyframes)</h2>
-<p>Each scene render with its collision-geometry view below (board/base hulls only, unified color).</p>
 <div class="grid" id="scenes"></div>
+
+<h3>Collision geometry (board/base hulls, unified color)</h3>
+<div class="grid" id="collision"></div>
 
 <h2>Aligned — 360° sweeps</h2>
 <div class="grid" id="aligned"></div>
@@ -50,18 +52,16 @@ const SCENES = ["scene_single_S_short","scene_single_S_long",
                 "scene_single_L_short","scene_single_L_long",
                 "scene_multi_1","scene_multi_2","scene_multi_3"];
 const DISTURB = ["disturb_xy_0.5N","disturb_0.4w"];
-// collision-view video per scene (long pegs share the short scene's board)
-const COLLMAP = {scene_single_S_short: "scene_single_S_short_collision",
-                 scene_single_M_short: "scene_single_M_short_collision",
-                 scene_single_L_short: "scene_single_L_short_collision",
-                 scene_multi_1: "scene_multi_1_collision",
-                 scene_multi_2: "scene_multi_2_collision",
-                 scene_multi_3: "scene_multi_3_collision"};
+const COLLISION = ["scene_single_S_short_collision","scene_single_M_short_collision",
+                   "scene_single_L_short_collision",
+                   "scene_multi_1_collision","scene_multi_2_collision","scene_multi_3_collision"];
 const fig = (inner, cap) => `<figure>${inner}<figcaption>${cap}</figcaption></figure>`;
 const vid = f => `<video controls muted loop playsinline preload="metadata"
   poster="media/posters/${f}.jpg" src="media/videos/${f}.mp4"></video>`;
-document.getElementById("scenes").innerHTML = SCENES.map(s =>
-  fig(`<img loading="lazy" src="media/scenes/${s}.png">` + (COLLMAP[s] ? vid(COLLMAP[s]) : ""), s)).join("");
+document.getElementById("scenes").innerHTML =
+  SCENES.map(s => fig(`<img loading="lazy" src="media/scenes/${s}.png">`, s)).join("");
+document.getElementById("collision").innerHTML =
+  COLLISION.map(c => fig(vid(c), c)).join("");
 document.getElementById("aligned").innerHTML =
   SCENES.map(s => fig(vid(s + "_aligned"), s)).join("");
 document.getElementById("disturb").innerHTML =
