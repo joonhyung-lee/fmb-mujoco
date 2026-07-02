@@ -1,0 +1,14 @@
+[project]
+name = "mjfmb"
+version = "0.1.0"
+description = "FMB (Functional Manipulation Benchmark) objects in MuJoCo"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mujoco>=3.1",
+    "numpy",
+    "Pillow",
+    "cadquery>=2.8",
+    "trimesh",
+    "obj2mjcf",
+]

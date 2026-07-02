@@ -1,0 +1,284 @@
+<mujoco model="FMB Multi 3">
+  <compiler angle="radian" autolimits="true" meshdir="obj"/>
+  <option integrator="RK4"/>
+  <visual><global offwidth="1280" offheight="960"/><headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/><rgba haze="0.15 0.25 0.35 1"/></visual>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="gp" builtin="checker" mark="edge" rgb1="0.9 0.9 0.9" rgb2="0.8 0.8 0.8" markrgb="0.8 0.8 0.8" width="1000" height="1000"/>
+    <material name="gp" texture="gp" texuniform="true" texrepeat="1 1" reflectance="0.1"/>
+    <material name="wt" rgba="0.85 0.72 0.53 1" specular="0.3" shininess="0.3"/>
+    <mesh name="board_3_base" file="board_3/board_3_base/board_3_base.obj"/>
+    <mesh name="base_c0" file="board_3/board_3_base/board_3_base_collision_0.obj"/>
+    <mesh name="base_c1" file="board_3/board_3_base/board_3_base_collision_1.obj"/>
+    <mesh name="base_c2" file="board_3/board_3_base/board_3_base_collision_10.obj"/>
+    <mesh name="base_c3" file="board_3/board_3_base/board_3_base_collision_100.obj"/>
+    <mesh name="base_c4" file="board_3/board_3_base/board_3_base_collision_101.obj"/>
+    <mesh name="base_c5" file="board_3/board_3_base/board_3_base_collision_102.obj"/>
+    <mesh name="base_c6" file="board_3/board_3_base/board_3_base_collision_103.obj"/>
+    <mesh name="base_c7" file="board_3/board_3_base/board_3_base_collision_104.obj"/>
+    <mesh name="base_c8" file="board_3/board_3_base/board_3_base_collision_105.obj"/>
+    <mesh name="base_c9" file="board_3/board_3_base/board_3_base_collision_106.obj"/>
+    <mesh name="base_c10" file="board_3/board_3_base/board_3_base_collision_107.obj"/>
+    <mesh name="base_c11" file="board_3/board_3_base/board_3_base_collision_108.obj"/>
+    <mesh name="base_c12" file="board_3/board_3_base/board_3_base_collision_11.obj"/>
+    <mesh name="base_c13" file="board_3/board_3_base/board_3_base_collision_12.obj"/>
+    <mesh name="base_c14" file="board_3/board_3_base/board_3_base_collision_13.obj"/>
+    <mesh name="base_c15" file="board_3/board_3_base/board_3_base_collision_14.obj"/>
+    <mesh name="base_c16" file="board_3/board_3_base/board_3_base_collision_15.obj"/>
+    <mesh name="base_c17" file="board_3/board_3_base/board_3_base_collision_16.obj"/>
+    <mesh name="base_c18" file="board_3/board_3_base/board_3_base_collision_17.obj"/>
+    <mesh name="base_c19" file="board_3/board_3_base/board_3_base_collision_18.obj"/>
+    <mesh name="base_c20" file="board_3/board_3_base/board_3_base_collision_19.obj"/>
+    <mesh name="base_c21" file="board_3/board_3_base/board_3_base_collision_2.obj"/>
+    <mesh name="base_c22" file="board_3/board_3_base/board_3_base_collision_20.obj"/>
+    <mesh name="base_c23" file="board_3/board_3_base/board_3_base_collision_21.obj"/>
+    <mesh name="base_c24" file="board_3/board_3_base/board_3_base_collision_22.obj"/>
+    <mesh name="base_c25" file="board_3/board_3_base/board_3_base_collision_23.obj"/>
+    <mesh name="base_c26" file="board_3/board_3_base/board_3_base_collision_24.obj"/>
+    <mesh name="base_c27" file="board_3/board_3_base/board_3_base_collision_25.obj"/>
+    <mesh name="base_c28" file="board_3/board_3_base/board_3_base_collision_26.obj"/>
+    <mesh name="base_c29" file="board_3/board_3_base/board_3_base_collision_27.obj"/>
+    <mesh name="base_c30" file="board_3/board_3_base/board_3_base_collision_28.obj"/>
+    <mesh name="base_c31" file="board_3/board_3_base/board_3_base_collision_29.obj"/>
+    <mesh name="base_c32" file="board_3/board_3_base/board_3_base_collision_3.obj"/>
+    <mesh name="base_c33" file="board_3/board_3_base/board_3_base_collision_30.obj"/>
+    <mesh name="base_c34" file="board_3/board_3_base/board_3_base_collision_31.obj"/>
+    <mesh name="base_c35" file="board_3/board_3_base/board_3_base_collision_32.obj"/>
+    <mesh name="base_c36" file="board_3/board_3_base/board_3_base_collision_33.obj"/>
+    <mesh name="base_c37" file="board_3/board_3_base/board_3_base_collision_34.obj"/>
+    <mesh name="base_c38" file="board_3/board_3_base/board_3_base_collision_35.obj"/>
+    <mesh name="base_c39" file="board_3/board_3_base/board_3_base_collision_36.obj"/>
+    <mesh name="base_c40" file="board_3/board_3_base/board_3_base_collision_37.obj"/>
+    <mesh name="base_c41" file="board_3/board_3_base/board_3_base_collision_38.obj"/>
+    <mesh name="base_c42" file="board_3/board_3_base/board_3_base_collision_39.obj"/>
+    <mesh name="base_c43" file="board_3/board_3_base/board_3_base_collision_4.obj"/>
+    <mesh name="base_c44" file="board_3/board_3_base/board_3_base_collision_40.obj"/>
+    <mesh name="base_c45" file="board_3/board_3_base/board_3_base_collision_41.obj"/>
+    <mesh name="base_c46" file="board_3/board_3_base/board_3_base_collision_42.obj"/>
+    <mesh name="base_c47" file="board_3/board_3_base/board_3_base_collision_43.obj"/>
+    <mesh name="base_c48" file="board_3/board_3_base/board_3_base_collision_44.obj"/>
+    <mesh name="base_c49" file="board_3/board_3_base/board_3_base_collision_45.obj"/>
+    <mesh name="base_c50" file="board_3/board_3_base/board_3_base_collision_46.obj"/>
+    <mesh name="base_c51" file="board_3/board_3_base/board_3_base_collision_47.obj"/>
+    <mesh name="base_c52" file="board_3/board_3_base/board_3_base_collision_48.obj"/>
+    <mesh name="base_c53" file="board_3/board_3_base/board_3_base_collision_49.obj"/>
+    <mesh name="base_c54" file="board_3/board_3_base/board_3_base_collision_5.obj"/>
+    <mesh name="base_c55" file="board_3/board_3_base/board_3_base_collision_50.obj"/>
+    <mesh name="base_c56" file="board_3/board_3_base/board_3_base_collision_51.obj"/>
+    <mesh name="base_c57" file="board_3/board_3_base/board_3_base_collision_52.obj"/>
+    <mesh name="base_c58" file="board_3/board_3_base/board_3_base_collision_53.obj"/>
+    <mesh name="base_c59" file="board_3/board_3_base/board_3_base_collision_54.obj"/>
+    <mesh name="base_c60" file="board_3/board_3_base/board_3_base_collision_55.obj"/>
+    <mesh name="base_c61" file="board_3/board_3_base/board_3_base_collision_56.obj"/>
+    <mesh name="base_c62" file="board_3/board_3_base/board_3_base_collision_57.obj"/>
+    <mesh name="base_c63" file="board_3/board_3_base/board_3_base_collision_58.obj"/>
+    <mesh name="base_c64" file="board_3/board_3_base/board_3_base_collision_59.obj"/>
+    <mesh name="base_c65" file="board_3/board_3_base/board_3_base_collision_6.obj"/>
+    <mesh name="base_c66" file="board_3/board_3_base/board_3_base_collision_60.obj"/>
+    <mesh name="base_c67" file="board_3/board_3_base/board_3_base_collision_61.obj"/>
+    <mesh name="base_c68" file="board_3/board_3_base/board_3_base_collision_62.obj"/>
+    <mesh name="base_c69" file="board_3/board_3_base/board_3_base_collision_63.obj"/>
+    <mesh name="base_c70" file="board_3/board_3_base/board_3_base_collision_64.obj"/>
+    <mesh name="base_c71" file="board_3/board_3_base/board_3_base_collision_65.obj"/>
+    <mesh name="base_c72" file="board_3/board_3_base/board_3_base_collision_66.obj"/>
+    <mesh name="base_c73" file="board_3/board_3_base/board_3_base_collision_67.obj"/>
+    <mesh name="base_c74" file="board_3/board_3_base/board_3_base_collision_68.obj"/>
+    <mesh name="base_c75" file="board_3/board_3_base/board_3_base_collision_69.obj"/>
+    <mesh name="base_c76" file="board_3/board_3_base/board_3_base_collision_7.obj"/>
+    <mesh name="base_c77" file="board_3/board_3_base/board_3_base_collision_70.obj"/>
+    <mesh name="base_c78" file="board_3/board_3_base/board_3_base_collision_71.obj"/>
+    <mesh name="base_c79" file="board_3/board_3_base/board_3_base_collision_72.obj"/>
+    <mesh name="base_c80" file="board_3/board_3_base/board_3_base_collision_73.obj"/>
+    <mesh name="base_c81" file="board_3/board_3_base/board_3_base_collision_74.obj"/>
+    <mesh name="base_c82" file="board_3/board_3_base/board_3_base_collision_75.obj"/>
+    <mesh name="base_c83" file="board_3/board_3_base/board_3_base_collision_76.obj"/>
+    <mesh name="base_c84" file="board_3/board_3_base/board_3_base_collision_77.obj"/>
+    <mesh name="base_c85" file="board_3/board_3_base/board_3_base_collision_78.obj"/>
+    <mesh name="base_c86" file="board_3/board_3_base/board_3_base_collision_79.obj"/>
+    <mesh name="base_c87" file="board_3/board_3_base/board_3_base_collision_8.obj"/>
+    <mesh name="base_c88" file="board_3/board_3_base/board_3_base_collision_80.obj"/>
+    <mesh name="base_c89" file="board_3/board_3_base/board_3_base_collision_81.obj"/>
+    <mesh name="base_c90" file="board_3/board_3_base/board_3_base_collision_82.obj"/>
+    <mesh name="base_c91" file="board_3/board_3_base/board_3_base_collision_83.obj"/>
+    <mesh name="base_c92" file="board_3/board_3_base/board_3_base_collision_84.obj"/>
+    <mesh name="base_c93" file="board_3/board_3_base/board_3_base_collision_85.obj"/>
+    <mesh name="base_c94" file="board_3/board_3_base/board_3_base_collision_86.obj"/>
+    <mesh name="base_c95" file="board_3/board_3_base/board_3_base_collision_87.obj"/>
+    <mesh name="base_c96" file="board_3/board_3_base/board_3_base_collision_88.obj"/>
+    <mesh name="base_c97" file="board_3/board_3_base/board_3_base_collision_89.obj"/>
+    <mesh name="base_c98" file="board_3/board_3_base/board_3_base_collision_9.obj"/>
+    <mesh name="base_c99" file="board_3/board_3_base/board_3_base_collision_90.obj"/>
+    <mesh name="base_c100" file="board_3/board_3_base/board_3_base_collision_91.obj"/>
+    <mesh name="base_c101" file="board_3/board_3_base/board_3_base_collision_92.obj"/>
+    <mesh name="base_c102" file="board_3/board_3_base/board_3_base_collision_93.obj"/>
+    <mesh name="base_c103" file="board_3/board_3_base/board_3_base_collision_94.obj"/>
+    <mesh name="base_c104" file="board_3/board_3_base/board_3_base_collision_95.obj"/>
+    <mesh name="base_c105" file="board_3/board_3_base/board_3_base_collision_96.obj"/>
+    <mesh name="base_c106" file="board_3/board_3_base/board_3_base_collision_97.obj"/>
+    <mesh name="base_c107" file="board_3/board_3_base/board_3_base_collision_98.obj"/>
+    <mesh name="base_c108" file="board_3/board_3_base/board_3_base_collision_99.obj"/>
+    <mesh name="board_3_part1" file="board_3/board_3_part1/board_3_part1.obj"/>
+    <mesh name="board_3_part1_c0" file="board_3/board_3_part1/board_3_part1_collision_0.obj"/>
+    <mesh name="board_3_part2" file="board_3/board_3_part2/board_3_part2.obj"/>
+    <mesh name="board_3_part2_c0" file="board_3/board_3_part2/board_3_part2_collision_0.obj"/>
+    <mesh name="board_3_part3" file="board_3/board_3_part3/board_3_part3.obj"/>
+    <mesh name="board_3_part3_c0" file="board_3/board_3_part3/board_3_part3_collision_0.obj"/>
+    <mesh name="board_3_part3_c1" file="board_3/board_3_part3/board_3_part3_collision_1.obj"/>
+    <mesh name="board_3_part3_c2" file="board_3/board_3_part3/board_3_part3_collision_2.obj"/>
+    <mesh name="board_3_part3_c3" file="board_3/board_3_part3/board_3_part3_collision_3.obj"/>
+    <mesh name="board_3_part3_c4" file="board_3/board_3_part3/board_3_part3_collision_4.obj"/>
+    <mesh name="board_3_part4" file="board_3/board_3_part4/board_3_part4.obj"/>
+    <mesh name="board_3_part4_c0" file="board_3/board_3_part4/board_3_part4_collision_0.obj"/>
+    <mesh name="board_3_part4_c1" file="board_3/board_3_part4/board_3_part4_collision_1.obj"/>
+    <mesh name="board_3_part4_c2" file="board_3/board_3_part4/board_3_part4_collision_2.obj"/>
+    <mesh name="board_3_part4_c3" file="board_3/board_3_part4/board_3_part4_collision_3.obj"/>
+    <mesh name="board_3_part4_c4" file="board_3/board_3_part4/board_3_part4_collision_4.obj"/>
+  </asset>
+  <worldbody>
+    <light pos="0 0 2" dir="0 0 -1" diffuse="0.6 0.6 0.6" directional="true"/>
+    <light pos="1 -1 1.5" dir="-1 1 -1" diffuse="0.3 0.3 0.3" directional="true"/>
+    <geom name="floor" group="1" size="0 0 0.05" type="plane" material="gp"/>
+    <body name="table"><geom type="box" size="0.4 0.4 0.4" pos="0 0 0.4" material="wt" mass="100"/></body>
+    <body name="base" pos="0 0 0.8">
+      <geom mesh="board_3_base" group="2" type="mesh" contype="0" conaffinity="0" rgba="0.2 0.25 0.55 1"/>
+      <geom mesh="base_c0" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c1" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c2" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c3" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c4" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c5" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c6" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c7" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c8" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c9" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c10" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c11" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c12" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c13" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c14" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c15" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c16" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c17" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c18" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c19" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c20" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c21" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c22" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c23" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c24" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c25" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c26" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c27" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c28" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c29" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c30" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c31" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c32" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c33" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c34" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c35" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c36" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c37" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c38" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c39" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c40" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c41" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c42" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c43" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c44" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c45" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c46" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c47" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c48" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c49" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c50" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c51" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c52" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c53" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c54" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c55" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c56" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c57" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c58" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c59" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c60" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c61" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c62" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c63" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c64" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c65" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c66" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c67" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c68" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c69" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c70" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c71" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c72" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c73" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c74" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c75" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c76" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c77" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c78" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c79" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c80" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c81" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c82" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c83" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c84" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c85" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c86" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c87" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c88" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c89" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c90" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c91" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c92" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c93" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c94" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c95" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c96" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c97" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c98" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c99" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c100" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c101" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c102" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c103" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c104" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c105" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c106" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c107" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="base_c108" type="mesh" rgba="0 0 0 0"/>
+    </body>
+    <body name="part1" pos="-0.0365 0.0 0.8405">
+      <joint type="free" damping="0.005"/>
+      <geom mesh="board_3_part1" group="2" type="mesh" contype="0" conaffinity="0" rgba="0.85 0.3 0.2 1"/>
+      <geom mesh="board_3_part1_c0" type="mesh" rgba="0 0 0 0"/>
+    </body>
+    <body name="part2" pos="0.0365 0.0 0.8405">
+      <joint type="free" damping="0.005"/>
+      <geom mesh="board_3_part2" group="2" type="mesh" contype="0" conaffinity="0" rgba="0.2 0.6 0.3 1"/>
+      <geom mesh="board_3_part2_c0" type="mesh" rgba="0 0 0 0"/>
+    </body>
+    <body name="part3" pos="0.0 -0.0515 0.8255">
+      <joint type="free" damping="0.005"/>
+      <geom mesh="board_3_part3" group="2" type="mesh" contype="0" conaffinity="0" rgba="0.9 0.75 0.1 1"/>
+      <geom mesh="board_3_part3_c0" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="board_3_part3_c1" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="board_3_part3_c2" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="board_3_part3_c3" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="board_3_part3_c4" type="mesh" rgba="0 0 0 0"/>
+    </body>
+    <body name="part4" pos="0.0 0.0515 0.8255">
+      <joint type="free" damping="0.005"/>
+      <geom mesh="board_3_part4" group="2" type="mesh" contype="0" conaffinity="0" rgba="0.6 0.25 0.7 1"/>
+      <geom mesh="board_3_part4_c0" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="board_3_part4_c1" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="board_3_part4_c2" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="board_3_part4_c3" type="mesh" rgba="0 0 0 0"/>
+      <geom mesh="board_3_part4_c4" type="mesh" rgba="0 0 0 0"/>
+    </body>
+  </worldbody>
+  <keyframe><key name="aligned" qpos="-0.0362413 0.00135883 0.840007 1 -1.45253e-05 -0.000462797 -0.000500382 0.036505 0.00135982 0.840018 1 -3.93385e-05 0.000160812 4.78881e-05 -0.000608592 -0.0511241 0.825578 0.999832 0.0182967 -0.000602747 -0.000726253 -0.000120457 0.0517647 0.825427 0.999887 -0.0146607 -0.000195401 0.00330765"/></keyframe>
+</mujoco>
