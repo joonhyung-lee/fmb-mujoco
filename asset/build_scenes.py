@@ -110,18 +110,13 @@ def board_walls(board):
 HEADER = """<mujoco model="{model}">
   <compiler angle="radian" autolimits="true" meshdir="obj" texturedir="obj"/>
   <option integrator="RK4"/>
-  <visual><global offwidth="1280" offheight="960"/><headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/><rgba haze="0.15 0.25 0.35 1"/></visual>
+  <visual><global offwidth="1280" offheight="960"/></visual>
+  <include file="floor_isaac.xml"/>
   <asset>
-    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
-    <texture type="2d" name="gp" builtin="checker" mark="edge" rgb1="0.9 0.9 0.9" rgb2="0.8 0.8 0.8" markrgb="0.8 0.8 0.8" width="1000" height="1000"/>
-    <material name="gp" texture="gp" texuniform="true" texrepeat="1 1" reflectance="0.1"/>
     <texture type="2d" name="light_wood" file="light_wood_v3.png"/>
     <material name="wt" texture="light_wood" specular="0.5" shininess="0.5" rgba="0.5 0.5 0.5 1"/>
 {meshes}  </asset>
   <worldbody>
-    <light pos="0 0 2" dir="0 0 -1" diffuse="0.6 0.6 0.6" directional="true"/>
-    <light pos="1 -1 1.5" dir="-1 1 -1" diffuse="0.3 0.3 0.3" directional="true"/>
-    <geom name="floor" group="1" size="0 0 0.05" type="plane" material="gp"/>
     <body name="table"><geom type="box" size="0.4 0.4 0.4" pos="0 0 0.4" material="wt" mass="100"/></body>
 {bodies}  </worldbody>
 </mujoco>
